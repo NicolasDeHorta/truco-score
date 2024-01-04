@@ -72,7 +72,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex bg-black flex-col justify-between items-center relative" style={{ minHeight: "90vh" }}>
+    <div className="flex text-white bg-black flex-col justify-between items-center relative" style={{ minHeight: "90vh" }}>
       {loading && <div className="h-screen flex justify-center items-center">Cargando datos previos...</div>}
       {!loading && (
         <>
