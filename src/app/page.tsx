@@ -51,9 +51,12 @@ export default function Home() {
   };
 
   const handleDeleteScore = (index: number) => {
-    const updatedScoresList = scoresList.filter((_, i) => i !== index);
-    setScoresList(updatedScoresList);
-    if (updatedScoresList.length == 0)  saveScoreData([])
+    const confirmDelete = window.confirm("¿Estás seguro?");
+    if (confirmDelete) {
+      const updatedScoresList = scoresList.filter((_, i) => i !== index);
+      setScoresList(updatedScoresList);
+      if (updatedScoresList.length == 0) saveScoreData([]);
+    }
   };
 
   const handleSquareModeToggle = () => {
@@ -61,12 +64,15 @@ export default function Home() {
   };
 
   const handleResetScores = () => {
-    setScoresList([]);
-    saveScoreData([])
+    const confirmDelete = window.confirm("¿Estás seguro?");
+    if (confirmDelete) {
+      setScoresList([]);
+      saveScoreData([]);
+    }
   };
 
   return (
-    <div className="flex flex-col justify-between items-center relative" style={{ minHeight: "90vh" }}>
+    <div className="flex bg-black flex-col justify-between items-center relative" style={{ minHeight: "90vh" }}>
       {loading && <div className="h-screen flex justify-center items-center">Cargando datos previos...</div>}
       {!loading && (
         <>
