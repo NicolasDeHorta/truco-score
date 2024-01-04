@@ -44,7 +44,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex flex-col min-h-screen justify-between items-center">
+    <div className="flex flex-col justify-between items-center relative" style={{minHeight: "90vh"}}>
       <div className="flex flex-col jsutify-center m-5 items-center">
       <h1 className="text-3xl font-bold mb-4">Truco</h1>
       {squareMode ? (
@@ -58,7 +58,7 @@ export default function Home() {
         />
       )}
       </div>
-      <div className="w-full flex flex-row justify-around mb-4">
+      <div className="w-full flex flex-row justify-around mb-4 absolute bottom-0 ">
         <button onClick={handleSquareModeToggle} className="mt-4 p-1 bg-green-700 text-white rounded-lg">
           {squareMode ? "Ver Tabla" : "Ver Cuadrados"}
         </button>

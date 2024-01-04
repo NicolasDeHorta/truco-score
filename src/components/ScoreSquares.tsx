@@ -53,6 +53,7 @@ const ScoreColumn = ({ name, score }: { name: string; score: number }) => {
   return (
     <div className="flex flex-col items-center mx-4">
       <div className="font-bold mb-2">{name}</div>
+      <div className="font-bold mb-2">{score <= 20 ? `${score} Malas` : `${score-20} Buenas`}</div>
       <div className="flex flex-col gap-4 flex-wrap justify-center items-end">{squares}</div>
     </div>
   );

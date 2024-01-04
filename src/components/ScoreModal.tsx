@@ -45,7 +45,7 @@ const ScoreModal = ({ onClose, onAddScore, scoresList, editIndex }: ScoreModalPr
 
   return (
     <div className="fixed inset-0 bg-gray-900 bg-opacity-75 flex items-center justify-center z-50">
-      <div className="bg-white p-4 rounded-lg">
+      <div className="bg-white p-4 rounded-lg mb-40">
         <h2 className="text-lg font-semibold mb-2">Ingresar Puntajes</h2>
         <div className="flex justify-between mb-4 ">
           <div className="flex flex-col justify-between items-center mb-2">
