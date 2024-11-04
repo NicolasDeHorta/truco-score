@@ -13,9 +13,9 @@ const Envido = () => {
 
                 <ul className="flex flex-col gap-4">
                     <li>• El envido se juega en la primer mano</li>
-                    <li>• Si ya se jugó una carta, ese jugador no puede decir envido, pero si "Querer"</li>
-                    <li>• Si dos jugadores empatan, gana el "mano"</li>
-                    <li>• Si un jugador pierde y no dijo sus puntos, no es necesario decirlo, puede simplemente decir "Son buenas".</li>
+                    <li>• Si ya se jugó una carta, ese jugador no puede decir envido, pero si npm run dev<em>Querer</em></li>
+                    <li>• Si dos jugadores empatan, gana el <em>mano</em></li>
+                    <li>• Si un jugador pierde y no dijo sus puntos, no es necesario decirlo, puede simplemente decir: <em>Son buenas</em>.</li>
                 </ul>
                 <hr />
 
@@ -78,7 +78,7 @@ const Envido = () => {
                         <div className="text-gray-400 text-sm mt-2">28 puntos</div>
                     </div>
                     <hr className="border-gray-600" />
-                    <li>• <span className="text-orange-500">3 cartas del mismo palo:</span> <br />Se debe decir "Flor", ya que el envido no es aplicable</li>
+                    <li>• <span className="text-orange-500">3 cartas del mismo palo:</span> <br />Se debe decir <em>Flor</em>, ya que el envido no es aplicable</li>
                 </ul>
 
 

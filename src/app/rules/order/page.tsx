@@ -33,7 +33,7 @@ const Order = () => {
                     </div>
                 </div>
                 <div className="flex flex-col gap-4">
-                    <div className="italic text-gray-400 mt-2">Nota:  De aqui en mas, las cartas empatan o "empardan" si son del mismo numero </div>
+                    <div className="italic text-gray-400 mt-2">Nota:  De aqui en mas, las cartas empatan o <em>empardan</em> si son del mismo numero </div>
                     <h4 className="mt-2 text-xl text-orange-400 font-bold">Comúnes</h4>
                     <div className="flex">
                         <Card row={1} col={3} scale={CARD_SIZE} />
