@@ -8,6 +8,7 @@ import SquaresIcon from "@/assets/icon-squares.svg"
 import NumbersIcon from "@/assets/icon-numbers.svg"
 import PlusIcon from "@/assets/icon-plus.svg"
 import Image from "next/image";
+import Link from "next/link";
 
 interface ScoreType {
   Nos: number;
@@ -76,9 +77,10 @@ export default function Home() {
   };
 
   return (
-    <div className="flex text-white flex-col items-center relative h-screen max-w-sm m-auto">
+    <div className="flex min-h-screen overflow-hidden text-white flex-col items-center relative max-w-sm m-auto">
       {loading && <div className="h-screen flex justify-center items-center">Cargando datos previos...</div>}
       <h1 className="text-3xl font-bold mt-4">Truco</h1>
+      <Link href="/rules" className="text-gray-400 font-bold absolute top-2 right-2"> Reglas</Link>
       {!loading && (
         <>
           <div className="flex w-3/4 flex-grow justify-center m-2 items-start overflow-hidden">
@@ -93,7 +95,7 @@ export default function Home() {
               />
             )}
           </div>
-          <div className="w-screen flex flex-row justify-around mb-16">
+          <div className="flex flex-row justify-around mb-16 max-w-screen-sm w-full">
             <button onClick={handleSquareModeToggle} className="mt-4 p-3 bg-orange-700 text-white rounded-full">
               {squareMode ?
                 <Image src={NumbersIcon} width={20} height={20} alt="tabla" />

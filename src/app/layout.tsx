@@ -17,10 +17,14 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="relative flex flex-col h-screen overflow-hidden">
-          <div className="bg-custom-wood bg-cover bg-center absolute w-screen h-screen brightness-[.3]"></div>
+        <main className="relative flex flex-col min-h-screen">
+          <div className="bg-custom-wood bg-cover bg-center fixed w-screen min-h-screen brightness-[.3]"></div>
           {children}
+          <footer className="py-4 relative mt-auto text-gray-500 bottom-0 text-xs text-center w-full">
+          Created with ♥ by <a href="https://www.linkedin.com/in/nicolas-de-horta/" className="underline underline-offset-2">Nicolas De Horta</a> &copy; {(new Date()).getFullYear()}
+        </footer>
         </main>
+
       </body>
     </html>
   )

@@ -8,6 +8,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      gap: {
+        '-4': '-10px',
+        '-8': '-15px',
+      },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))',
         'gradient-conic':
