@@ -19,7 +19,7 @@ const Card = ({ row, col, scale, className }: CardProps) => {
   const backgroundPositionY = -(row - 1) * CARD_HEIGHT;
 
   return (
-    <div className={`relative text-white w-10 ${className}`}
+    <div className={`${className} relative w-10 rounded-md shadow-md shadow-orange-700`}
       style={{
         width: CARD_WIDTH,
         height: CARD_HEIGHT,

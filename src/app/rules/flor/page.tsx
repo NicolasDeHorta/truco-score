@@ -79,7 +79,7 @@ const Envido = () => {
                             <Card row={3} col={4} scale={CARD_SIZE} className="-mx-5" />
                             <Card row={3} col={2} scale={CARD_SIZE} />
                         </div>
-                        <div className="text-gray-400 text-sm mt-2">28 (pieza) + 4 + 2 = 36 puntos</div>
+                        <div className="text-gray-400 text-sm mt-2">28 (pieza) + 4 + 2 = 34 puntos</div>
                     </div>
                     <li>• <span className="text-orange-500">Dos piezas:</span> <br />Pieza + (Pieza sin 20) + Suma de la carta restante</li>
                     <div className="flex flex-col">
@@ -101,7 +101,7 @@ const Envido = () => {
                             <Card row={1} col={4} scale={CARD_SIZE} className="-mx-5" />
                             <Card row={1} col={5} scale={CARD_SIZE} />
                         </div>
-                        <div className="text-gray-400 text-sm mt-2">30 (Pieza) + 9 (Pieza) + 8 = 45 puntos</div>
+                        <div className="text-gray-400 text-sm mt-2">30 (Pieza) + 9 (Pieza) + 8 (Pieza) = 47 puntos</div>
                         <div className="text-gray-400 text-sm mt-2">Al igual que en el caso de dos piezas, solo la primer pieza cuenta con 20, el resto con el valor restante</div>
                     </div>
                 </ul>

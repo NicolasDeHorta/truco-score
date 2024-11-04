@@ -75,7 +75,7 @@ const Envido = () => {
                             <Card row={2} col={6} scale={CARD_SIZE} className="-mx-5" />
                             <Card row={4} col={1} scale={CARD_SIZE} />
                         </div>
-                        <div className="text-gray-400 text-sm mt-2">28 puntos</div>
+                        <div className="text-gray-400 text-sm mt-2">2 + 6 + 20 = 28 puntos</div>
                     </div>
                     <hr className="border-gray-600" />
                     <li>• <span className="text-orange-500">3 cartas del mismo palo:</span> <br />Se debe decir <em>Flor</em>, ya que el envido no es aplicable</li>
@@ -94,7 +94,7 @@ const Envido = () => {
                             <Card row={4} col={1} scale={CARD_SIZE} />
                         </div>
                         <div className="text-gray-400 text-sm mt-2">el 4 es pieza, el 6 es mayor al 1 en puntaje <br />
-                            29 + 6 = 35 puntos</div>
+                            29 (Pieza) + 6 = 35 puntos</div>
                     </div>
                 </ul>
             </div>
