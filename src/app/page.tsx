@@ -77,7 +77,7 @@ export default function Home() {
   };
 
   return (
-    <div className="flex min-h-screen overflow-hidden text-white flex-col items-center relative max-w-sm m-auto">
+    <div className="flex min-h-screen overflow-hidden text-white flex-col items-center relative max-w-sm">
       {loading && <div className="h-screen flex justify-center items-center">Cargando datos previos...</div>}
       <h1 className="text-3xl font-bold mt-4">Truco</h1>
       <Link href="/rules" className="text-gray-400 font-bold absolute top-2 right-2"> Reglas</Link>

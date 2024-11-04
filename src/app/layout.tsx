@@ -17,7 +17,7 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <main className="relative flex flex-col min-h-screen">
+        <main className="relative flex flex-col min-h-screen h-screen-sm items-center">
           <div className="bg-custom-wood bg-cover bg-center fixed w-screen min-h-screen brightness-[.3]"></div>
           {children}
           <footer className="py-4 relative mt-auto text-gray-500 bottom-0 text-xs text-center w-full">
