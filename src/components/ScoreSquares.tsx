@@ -2,18 +2,19 @@ import React from "react";
 
 interface ScoreSquaresProps {
   scoresList: { Nos: number; Ellos: number }[];
+  onAddScore: (newScores: { Nos: number; Ellos: number }[]) => void;
 }
 
-const ScoreSquares = ({ scoresList }: ScoreSquaresProps) => {
+const ScoreSquares = ({ scoresList, onAddScore }: ScoreSquaresProps) => {
   const totalNos = scoresList.reduce((acc, score) => acc + score.Nos, 0);
   const totalEllos = scoresList.reduce((acc, score) => acc + score.Ellos, 0);
 
   return (
-    <div className="mt-4 flex flex-col items-center w-screen">
-      {Math.max(totalNos, totalEllos) > 20 && <div className="absolute w-[150px] border-t border-white top-[308px]"></div>}
+    <div className="relative mt-4 flex flex-col items-center w-screen">
+      {Math.max(totalNos, totalEllos) > 20 && <div className="absolute w-[150px] border-t border-white top-[230px]"></div>}
       <div className="flex">
-        <ScoreColumn name="Nos" score={totalNos} />
-        <ScoreColumn name="Ellos" score={totalEllos} />
+        <ScoreColumn name="Nos" score={totalNos} onAddScore={onAddScore} scoresList={scoresList}/>
+        <ScoreColumn name="Ellos" score={totalEllos} onAddScore={onAddScore} scoresList={scoresList}/>
       </div>
     </div>
   );
@@ -55,7 +56,9 @@ const renderSquare = (score: number, index: number) => {
   return square;
 };
 
-const ScoreColumn = ({ name, score }: { name: string; score: number }) => {
+const ScoreColumn = ({ name, score, onAddScore, scoresList }: {
+  name: string; score: number, scoresList: { Nos: number; Ellos: number }[], onAddScore: (newScores: { Nos: number; Ellos: number }[]) => void;
+}) => {
   const squares = [];
   for (let i = 5; i <= score; i += 5) {
     squares.push(renderSquare(5, i));
@@ -65,8 +68,20 @@ const ScoreColumn = ({ name, score }: { name: string; score: number }) => {
     squares.push(renderSquare(remainder, score));
   }
 
+  const handleClickColumn = (name: String) => {
+    // const updatedScoresList = [...scoresList, newScores];
+    // onAddScore(updatedScoresList);
+    const newScoreRow = name == "Ellos" ? {Nos: 0, Ellos: 1} : {Nos: 1, Ellos: 0}
+    const newScore = [
+      ...scoresList,
+      newScoreRow
+
+    ]
+    onAddScore(newScore)
+  }
+
   return (
-    <div className="relative flex flex-col items-center mx-4">
+    <div className="relative flex flex-col items-center mx-4" onClick={() => handleClickColumn(name)}>
       <div className="font-bold mb-2">{name}</div>
       <div className="font-bold mb-2">{score <= 20 ? `${score} Malas` : `${score - 20} Buenas`}</div>
       <div className="flex flex-col gap-4 flex-wrap justify-center items-end">{squares}</div>

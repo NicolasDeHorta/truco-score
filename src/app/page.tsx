@@ -28,6 +28,7 @@ export default function Home() {
     if (scoreData) setScoresList(scoreData);
     setLoading(false);
   };
+
   useEffect(() => {
     if (scoresList.length > 0) saveScoreData(scoresList);
   }, [scoresList]);
@@ -85,7 +86,12 @@ export default function Home() {
         <>
           <div className="flex w-3/4 flex-grow justify-center m-2 items-start overflow-hidden">
             {squareMode ? (
-              <ScoreSquares scoresList={scoresList} />
+              <div className="flex flex-col text-wrap overflow-hidden items-center">
+              <div className=" relative text-gray-400 text-xs text-center"> Puedes clickear en la columna para agregar de a un punto</div>
+              <ScoreSquares scoresList={scoresList} 
+              onAddScore={handleAddScore}
+              />
+              </div>
             ) : (
               <ScoreTable
                 scoresList={scoresList}
