@@ -81,7 +81,7 @@ const ScoreColumn = ({ name, score, onAddScore, scoresList }: {
   }
 
   return (
-    <div className="relative flex flex-col items-center mx-4" onClick={() => handleClickColumn(name)}>
+    <div className="relative flex flex-col items-center mx-4 min-h-[400px]" onClick={() => handleClickColumn(name)}>
       <div className="font-bold mb-2">{name}</div>
       <div className="font-bold mb-2">{score <= 20 ? `${score} Malas` : `${score - 20} Buenas`}</div>
       <div className="flex flex-col gap-4 flex-wrap justify-center items-end">{squares}</div>
