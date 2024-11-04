@@ -12,7 +12,7 @@ const renderSquare = (score: number, index: number) => {
 
   if (score === 5) {
     square = (
-      <div key={index} className={`${baseStyle} ${fullSquareStyle} relative`} style={{position: "relative"}}>
+      <div key={index} className={`${baseStyle} ${fullSquareStyle} relative`} style={{ position: "relative" }}>
         <div
           style={{
             width: "120%", height: "120%",
@@ -30,10 +30,10 @@ const renderSquare = (score: number, index: number) => {
       score === 1
         ? "border-b-2"
         : score === 2
-        ? " border-b-2 border-r-2"
-        : score === 3
-        ? " border-b-2 border-r-2 border-l-2"
-        : " border-b-2 border-r-2 border-l-2 border-t-2";
+          ? " border-b-2 border-r-2"
+          : score === 3
+            ? " border-b-2 border-r-2 border-l-2"
+            : " border-b-2 border-r-2 border-l-2 border-t-2";
     square = <div key={index} className={`${baseStyle} ${borderStyle}`}></div>;
   }
 
@@ -51,9 +51,9 @@ const ScoreColumn = ({ name, score }: { name: string; score: number }) => {
   }
 
   return (
-    <div className="flex flex-col items-center mx-4">
+    <div className="relative flex flex-col items-center mx-4">
       <div className="font-bold mb-2">{name}</div>
-      <div className="font-bold mb-2">{score <= 20 ? `${score} Malas` : `${score-20} Buenas`}</div>
+      <div className="font-bold mb-2">{score <= 20 ? `${score} Malas` : `${score - 20} Buenas`}</div>
       <div className="flex flex-col gap-4 flex-wrap justify-center items-end">{squares}</div>
     </div>
   );
@@ -65,6 +65,7 @@ const ScoreSquares = ({ scoresList }: ScoreSquaresProps) => {
 
   return (
     <div className="mt-4 flex flex-col items-center">
+      {Math.max(totalNos, totalEllos) > 20 && <div className="absolute w-[150px] border-t border-white top-[308px]"></div>}
       <div className="flex">
         <ScoreColumn name="Nos" score={totalNos} />
         <ScoreColumn name="Ellos" score={totalEllos} />

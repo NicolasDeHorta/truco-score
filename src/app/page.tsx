@@ -4,6 +4,10 @@ import ScoreTable from "../components/ScoreTable";
 import ScoreModal from "../components/ScoreModal";
 import ScoreSquares from "@/components/ScoreSquares";
 import { getScoreData, saveScoreData } from "@/utils";
+import SquaresIcon from "@/assets/icon-squares.svg"
+import NumbersIcon from "@/assets/icon-numbers.svg"
+import PlusIcon from "@/assets/icon-plus.svg"
+import Image from "next/image";
 
 interface ScoreType {
   Nos: number;
@@ -72,12 +76,12 @@ export default function Home() {
   };
 
   return (
-    <div className="flex text-white bg-black flex-col justify-between items-center relative" style={{ minHeight: "90vh" }}>
+    <div className="flex text-white flex-col items-center relative h-screen max-w-sm m-auto">
       {loading && <div className="h-screen flex justify-center items-center">Cargando datos previos...</div>}
+      <h1 className="text-3xl font-bold mt-4">Truco</h1>
       {!loading && (
         <>
-          <div className="flex flex-col justify-center m-5 items-center">
-            <h1 className="text-3xl font-bold mb-4">Truco</h1>
+          <div className="flex w-3/4 flex-grow justify-center m-2 items-start overflow-hidden">
             {squareMode ? (
               <ScoreSquares scoresList={scoresList} />
             ) : (
@@ -89,12 +93,16 @@ export default function Home() {
               />
             )}
           </div>
-          <div className="w-full flex flex-row justify-around mb-4 absolute bottom-0 ">
-            <button onClick={handleSquareModeToggle} className="mt-4 p-1 bg-green-700 text-white rounded-lg">
-              {squareMode ? "Ver Tabla" : "Ver Cuadrados"}
+          <div className="w-screen flex flex-row justify-around mb-16">
+            <button onClick={handleSquareModeToggle} className="mt-4 p-3 bg-orange-700 text-white rounded-full">
+              {squareMode ?
+                <Image src={NumbersIcon} width={20} height={20} alt="tabla" />
+                :
+                <Image src={SquaresIcon} width={20} height={20} alt="cuadrados" />
+              }
             </button>
-            <button onClick={handleModalOpen} className="mt-4 p-1 bg-green-700 text-white rounded-lg">
-              + Agregar +
+            <button onClick={handleModalOpen} className="mt-4 p-3 bg-orange-700 text-white rounded-full">
+              <Image src={PlusIcon} width={20} height={20} alt="agregar" />
             </button>
           </div>
         </>

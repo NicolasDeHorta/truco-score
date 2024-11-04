@@ -16,7 +16,12 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={inter.className}>
+        <main className="relative flex flex-col h-screen overflow-hidden">
+          <div className="bg-custom-wood bg-cover bg-center absolute w-screen h-screen brightness-[.3]"></div>
+          {children}
+        </main>
+      </body>
     </html>
   )
 }
