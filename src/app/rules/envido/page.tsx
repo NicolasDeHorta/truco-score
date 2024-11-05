@@ -13,7 +13,7 @@ const Envido = () => {
 
                 <ul className="flex flex-col gap-4">
                     <li>• El envido se juega en la primer mano</li>
-                    <li>• Si ya se jugó una carta, ese jugador no puede decir envido, pero si npm run dev<em>Querer</em></li>
+                    <li>• Si ya se jugó una carta, ese jugador no puede decir envido, pero si <em>Querer</em></li>
                     <li>• Si dos jugadores empatan, gana el <em>mano</em></li>
                     <li>• Si un jugador pierde y no dijo sus puntos, no es necesario decirlo, puede simplemente decir: <em>Son buenas</em>.</li>
                 </ul>
